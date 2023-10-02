@@ -14,25 +14,36 @@ git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 cargo install tree-sitter-cli
 
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+
 tar xf lazygit.tar.gz lazygit
+
 sudo install lazygit /usr/local/bin
 
 add-apt-repository ppa:daniel-milde/gdu
+
 apt-get update
+
 apt-get install gdu
 
 curl -LO https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb
 sudo dpkg -i bottom_0.9.6_amd64.deb	
 
 ### Docker
+
 curl -fsSL https://get.docker.com | sh
 
 ### Postman
+
 https://www.postman.com/downloads/
+
 ### DBeaver
+
 https://dbeaver.io/download/
+
 ### WSL
+
 wsl --install
 
 wsl --list --online
@@ -44,5 +55,6 @@ wsl --list
 wsl --unregister Ubuntu
 
 ### NerdHack Font
+
 https://www.nerdfonts.com/font-downloads
 https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
