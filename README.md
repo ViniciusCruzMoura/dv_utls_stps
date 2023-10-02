@@ -1,4 +1,4 @@
-# AstroNvim
+### AstroNvim
 
 sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt update
 
@@ -25,14 +25,14 @@ apt-get install gdu
 curl -LO https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb
 sudo dpkg -i bottom_0.9.6_amd64.deb	
 
-# Docker
+### Docker
 curl -fsSL https://get.docker.com | sh
 
-# Postman
+### Postman
 https://www.postman.com/downloads/
-# DBeaver
+### DBeaver
 https://dbeaver.io/download/
-# WSL
+### WSL
 wsl --install
 
 wsl --list --online
@@ -43,6 +43,6 @@ wsl -l -v
 wsl --list
 wsl --unregister Ubuntu
 
-# NerdHack Font
+### NerdHack Font
 https://www.nerdfonts.com/font-downloads
 https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
