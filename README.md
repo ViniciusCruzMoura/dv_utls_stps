@@ -57,4 +57,5 @@ wsl --unregister Ubuntu
 ### NerdHack Font
 
 https://www.nerdfonts.com/font-downloads
+
 https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
