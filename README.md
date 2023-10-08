@@ -28,6 +28,16 @@ sudo dpkg -i bottom_0.9.6_amd64.deb
 ```
 curl -fsSL https://get.docker.com | sh
 ```
+```
+sudo docker run -it --rm -v "$PWD":/usr/src/app -w /usr/src/app gcc:latest bash
+sudo docker run -it --rm -v "$PWD":/usr/src/app -w /usr/src/app golang:1.21 bash
+sudo docker run -it --rm -v "$PWD":/usr/src/app -w /usr/src/app python:3.9 bash
+```
+```
+sudo docker run -it -p 9000:8000 -v "$PWD":/usr/src/app -w /usr/src/app python:3.9 bash
+sudo docker start "container-name-or-id"
+sudo docker exec -it "container-name-or-id" bash
+```
 ### Postman
 ```
 https://www.postman.com/downloads/
