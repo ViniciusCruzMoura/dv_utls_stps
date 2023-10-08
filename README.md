@@ -42,6 +42,9 @@ sudo docker exec -it "container-name-or-id" bash
 sudo docker build -t devapp .
 sudo docker run -it -p 9000:8000 -v "$PWD":/usr/src/app -w /usr/src/app devapp bash
 ```
+```
+https://codenotary.com/blog/extremely-useful-docker-commands
+```
 ### Postman
 ```
 https://www.postman.com/downloads/
