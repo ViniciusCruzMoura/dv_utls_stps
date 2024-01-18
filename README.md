@@ -45,6 +45,11 @@ sudo docker run -it -p 9000:8000 -v "$PWD":/usr/src/app -w /usr/src/app devapp b
 ```
 https://codenotary.com/blog/extremely-useful-docker-commands
 ```
+```
+sudo docker rm -v -f $(sudo docker ps -qa);
+sudo docker volume rm $(sudo docker volume ls -q --filter dangling=true);
+sudo docker system prune --all --force;
+```
 ### Postman
 ```
 https://www.postman.com/downloads/
