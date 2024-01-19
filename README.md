@@ -76,7 +76,7 @@ https://www.nerdfonts.com/font-downloads
 https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
 ```
 
-### Portainer, Docker bind
+### Portainer, Docker bind, venv
 scripts para instalar o docker e portainer
 ```
 -instalar o docker:
@@ -112,4 +112,15 @@ sudo docker volume create portainer_data
 
 -instalar o dashboard
 sudo docker run -d -p 9000:9000 -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+```
+adicionar variaveis de ambiente
+```
+- Adicionar as variáveis no ambiente da maquina
+      sudo nano /etc/environment
+- Aplicar as novas variáveis
+      source /etc/environment
+- Listar as variaveis de ambiente pela palavra chave
+      sudo env | grep -E "USER|PASSWORD"
+
+Observação: deve-se utilizar o "sudo" para que as variáveis sejam acessadas pelos sistemas
 ```
