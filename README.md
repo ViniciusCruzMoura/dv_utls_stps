@@ -75,3 +75,41 @@ wsl --unregister Ubuntu
 https://www.nerdfonts.com/font-downloads
 https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
 ```
+
+### Portainer, Docker bind
+scripts para instalar o docker e portainer
+```
+-instalar o docker:
+curl -fsSL https://get.docker.com | sh
+
+-bind da pasta do docker para o disco de storage:
+sudo systemctl stop docker
+sudo rm -rf /var/lib/docker
+sudo mkdir /var/lib/docker
+sudo mkdir /sistemas/apps/docker
+sudo mount --rbind /sistemas/apps/docker /var/lib/docker
+sudo systemctl start docker
+
+-instalar o portainer:
+docker run -d \
+  -p 9001:9001 \
+  --name portainer_agent \
+  --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /var/lib/docker/volumes:/var/lib/docker/volumes \
+  portainer/agent:2.18.4
+```
+scripts para configurar o bind
+```
+-mount bind permanente
+sudo nano /etc/fstab
+/sistemas/apps/docker /var/lib/docker none defaults,bind 0 0
+```
+scripts para o portainer manager
+```
+-criar volume para salvar as configs
+sudo docker volume create portainer_data
+
+-instalar o dashboard
+sudo docker run -d -p 9000:9000 -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+```
