@@ -91,7 +91,7 @@ sudo mount --rbind /sistemas/apps/docker /var/lib/docker
 sudo systemctl start docker
 
 -instalar o portainer:
-docker run -d \
+sudo docker run -d \
   -p 9001:9001 \
   --name portainer_agent \
   --restart=always \
