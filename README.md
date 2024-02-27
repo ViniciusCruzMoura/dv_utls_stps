@@ -69,6 +69,19 @@ wsl -l -v
 
 wsl --list
 wsl --unregister Ubuntu
+
+How do I get back unused disk space from Ubuntu on WSL2?
+https://superuser.com/questions/1606213/how-do-i-get-back-unused-disk-space-from-ubuntu-on-wsl2
+When the command let optimize-vhd is not available in your system do the following:
+- Shutdown the wsl before managing its disk
+wsl --shutdown
+- Save the following script as compact-disk.txt
+select vdisk file="C:\Users\%username%\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState\ext4.vhdx"
+attach vdisk readonly
+compact vdisk
+detach vdisk
+- Open prompt as Administrator and run the saved script above
+diskpart /s <SAVED_SCRIPT_FOLDER_PATH>\compact-disk.txt
 ```
 ### NerdHack Font
 ```
