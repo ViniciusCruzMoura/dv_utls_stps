@@ -137,3 +137,8 @@ adicionar variaveis de ambiente
 
 Observação: deve-se utilizar o "sudo" para que as variáveis sejam acessadas pelos sistemas
 ```
+
+#### Cisco WSL
+```
+Get-NetAdapter | Where-Object {$_.InterfaceDescription -Match "Cisco AnyConnect"} | Set-NetIPInterface -InterfaceMetric 6000 ; Restart-Service LxssManager
+```
